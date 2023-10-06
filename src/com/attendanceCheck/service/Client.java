@@ -2,16 +2,19 @@ package com.attendanceCheck.service;
 
 
 import com.attendanceCheck.view.Ui;
+
 import java.util.Scanner;
+
 public class Client {
 
-    private static Ui ui = new Ui();
-    private static Service service = new Service();
-    private static Scanner sc = new Scanner(System.in);
+    private static final Ui ui = new Ui();
 
-    public static void start() {
-        int loginWay =ui.loginSelect();// 로그인 페이지
-        switch (loginWay) {
+    //private static StaffService service = new StaffService();
+    private static final JdbcService service = new JdbcService();
+    private static final Scanner sc = new Scanner(System.in);
+
+    public static void start() { // 로그인 페이지
+        switch (ui.loginSelect()) {
             case 1:
                 ui.loginDistinction(1);
                 service.adminLogin(Integer.parseInt(sc.nextLine()));
@@ -26,13 +29,11 @@ public class Client {
                 break;
         }
     }
+
     public static void adminManagement() { // 관리자 기능
-        Scanner sc = new Scanner(System.in);
         while (true) {
-            ui.adminManagementMenu();
             try {
-                int number = Integer.parseInt(sc.nextLine());
-                switch (number) {
+                switch (ui.adminManagementMenu()) {
                     case 1://신입 사원 정보 입력
                         service.staffCreate();
                         break;
@@ -62,11 +63,8 @@ public class Client {
     }
 
     public static void staffManagement(int staffId) { //직원 사용 기능
-        Scanner sc = new Scanner(System.in);
         while (true) {
-            ui.attendanceMenu();
-            int number = Integer.parseInt(sc.nextLine());
-            switch (number) {
+            switch (ui.attendanceMenu()) {
                 case 1:// 출근
                     service.attendance(staffId);
                     break;
@@ -85,8 +83,6 @@ public class Client {
             }
         }
     }
-
-
 }
 
 

@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Staff {
     private String name;
-    private final int ssn;
+    private  int ssn;
     private String position;
     private int staffNumber;
     private Date attendanceTime;
@@ -20,8 +20,15 @@ public class Staff {
         this.staffState = staffState;
     }
 
+    public Staff() {
+
+    }
+
     public int getSsn() {
         return ssn;
+    }
+    public void setSsn(int ssn) {
+        this.ssn = ssn;
     }
 
 
@@ -32,6 +39,34 @@ public class Staff {
 
     public Date getAttendanceTime() {
         return attendanceTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setStaffNumber(int staffNumber) {
+        this.staffNumber = staffNumber;
+    }
+
+    public void setAttendanceTime(Date attendanceTime) {
+        this.attendanceTime = attendanceTime;
+    }
+
+    public void setLeaveWorkTime(Date leaveWorkTime) {
+        this.leaveWorkTime = leaveWorkTime;
     }
 
     public void setAttendanceTime() {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseToolSources">
+    <data-source name="DB" uuid="6e85868b-164b-49ce-bcb2-c4376b5682dc" type="MYSQL">
+      <base-info connect-type="DB_DEFAULT" />
+      <user-name>dlgusdn7706</user-name>
+      <url>jdbc:mysql://localhost:3306/?useSSL=false&amp;serverTimezone=Asia/Seoul?useSSL=false&amp;serverTimezone=Asia/Seoul</url>
+      <remarks />
+      <driver-info id="mysql5" />
+      <ssh-properties enabled="false" />
+      <ssl-config enabled="false">
+        <uuid />
+        <caFile />
+        <clientCertificateFile />
+        <clientKeyFile />
+        <sslMode>REQUIRE</sslMode>
+      </ssl-config>
+    </data-source>
+  </component>
+</project>
